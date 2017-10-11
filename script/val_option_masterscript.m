@@ -1,7 +1,7 @@
 %%
 % --- user inputs
 % clear;
-asset = 'zinc';
+asset = 'thermal coal';
 businessDaysPerYear = 252;
 daysPerYear = 365;
 addOn = 0;
@@ -15,7 +15,7 @@ fprintf('\tinterest rate: %4.2f%%\n',rates*100);
 
 %%
 % --- option user inputs
-tenor = '3m';
+tenor = '1m';
 
 %futures/forward assuming paying the fixed dividend as of the rates
 %yield curve
