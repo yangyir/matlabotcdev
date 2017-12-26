@@ -128,7 +128,7 @@ classdef cAsset
                             bcode_init = info.BloombergCode;
                             wcode_init = info.WindCode;
                             bcode_str = clb{i,1};
-                            wcode_str = clb{i,2};
+                            wcode_str = clw{i,1};
                             temp = regexp(bcode_str,' ','split');
                             bcode_type = temp{2};
                             code = temp{1};
