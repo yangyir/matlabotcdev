@@ -123,6 +123,21 @@ classdef cAsset
                         temp = getdata(c,clb{i},'last_tradeable_dt');
                         if ~isempty(temp) && isnumeric(temp.last_tradeable_dt)
                             expiries(i) = temp.last_tradeable_dt;
+                        else
+                            info = getassetinfo(name);
+                            bcode_init = info.BloombergCode;
+                            wcode_init = info.WindCode;
+                            bcode_str = clb{i,1};
+                            wcode_str = clw{i,1};
+                            temp = regexp(bcode_str,' ','split');
+                            bcode_type = temp{2};
+                            code = temp{1};
+                            bcode_str = code(1:length(bcode_init)+1);
+                            bcode_tenor = code(length(bcode_str)+1:end);
+                            wcode_y = wcode_str(length(wcode_init)+1);
+                            clb{i,1} = [bcode_str,wcode_y,bcode_tenor,' ',bcode_type];
+                            temp = getdata(c,clb{i},'last_tradeable_dt');
+                            expiries(i) = temp.last_tradeable_dt;
                         end
                     end
                 catch me
