@@ -1,7 +1,7 @@
 %%
 % --- user inputs
 % clear;
-asset = 'thermal coal';
+asset = 'soymeal';
 businessDaysPerYear = 252;
 daysPerYear = 365;
 addOn = 0;
@@ -103,7 +103,7 @@ timeseries_plot(hv,'dateformat','mmm-yy',...
 % --- define the rateSpec and stockSpec
 %user inputs
 sigma = fv;
-volshift = 0.06;
+volshift = 0.01;
 %
 sigma = sqrt((sigma+volshift)^2*businessDaysPerYear/daysPerYear);
 rateSpec = intenvset('ValuationDate',settle,'StartDates',settle,...
@@ -114,7 +114,7 @@ fprintf('calendar vol used for pricing:%4.1f%%\n\n',sigma*100);
 %%
 % strike = mean(indexSynthetic(end-9:end,2));
 % spot = indexSynthetic(end,2);
-strike = 0.94;
+strike = 1;
 spot = 1;
 optSpec = 'put';
 stockSpec = stockspec(sigma,spot,divType,divAmount);
