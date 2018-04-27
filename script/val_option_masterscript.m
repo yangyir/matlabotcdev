@@ -1,7 +1,7 @@
 %%
 % --- user inputs
 % clear;
-asset = 'corn';
+asset = 'soymeal';
 businessDaysPerYear = 252;
 daysPerYear = 365;
 addOn = 0;
@@ -15,7 +15,7 @@ fprintf('\tinterest rate: %4.2f%%\n',rates*100);
 
 %%
 % --- option user inputs
-tenor = '1y';
+tenor = '1m';
 
 %futures/forward assuming paying the fixed dividend as of the rates
 %yield curve
@@ -103,7 +103,7 @@ timeseries_plot(hv,'dateformat','mmm-yy',...
 % --- define the rateSpec and stockSpec
 %user inputs
 sigma = fv;
-volshift = 0.04;
+volshift = 0.0;
 %
 sigma = sqrt((sigma+volshift)^2*businessDaysPerYear/daysPerYear);
 rateSpec = intenvset('ValuationDate',settle,'StartDates',settle,...
