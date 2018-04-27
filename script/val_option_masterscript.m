@@ -1,7 +1,15 @@
 %%
 % --- user inputs
 % clear;
+<<<<<<< HEAD
 asset = 'soymeal';
+=======
+<<<<<<< HEAD
+asset = 'soymeal';
+=======
+asset = 'corn';
+>>>>>>> 01b250e26c93356c2fb074c0366c7926d40769fb
+>>>>>>> 1495f175ca61d06b358acb9c338060f3dfb34df0
 businessDaysPerYear = 252;
 daysPerYear = 365;
 addOn = 0;
@@ -103,7 +111,15 @@ timeseries_plot(hv,'dateformat','mmm-yy',...
 % --- define the rateSpec and stockSpec
 %user inputs
 sigma = fv;
+<<<<<<< HEAD
 volshift = 0.0;
+=======
+<<<<<<< HEAD
+volshift = 0.01;
+=======
+volshift = 0.04;
+>>>>>>> 01b250e26c93356c2fb074c0366c7926d40769fb
+>>>>>>> 1495f175ca61d06b358acb9c338060f3dfb34df0
 %
 sigma = sqrt((sigma+volshift)^2*businessDaysPerYear/daysPerYear);
 rateSpec = intenvset('ValuationDate',settle,'StartDates',settle,...
