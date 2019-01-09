@@ -39,7 +39,7 @@ classdef cAsset
         %
         function ei = get.ExtraInfo(obj)
             name = obj.AssetName;
-            path = getenv('datapath');
+            path = getenv('datapath2');
             if isempty(path)
                 path = 'C:\temp';
             end
